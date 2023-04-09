@@ -1,4 +1,6 @@
 ---
+  import '../styles/global.css';
+
 	const pageTitle = "A propos";
 
   const identity = {
@@ -13,6 +15,8 @@
   const happy = false;
   const finished = true;
   const goal = 3;
+
+  const skillColor = "orange";
 ---
 
 <html lang="en">
@@ -22,6 +26,17 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+    <style define:vars={{skillColor}}>
+      h1 {
+        color: purple;
+        font-size: 2em;
+        font-family: "calibri";
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: bold;
+      }
+    </style>
 	</head>
 	<body>
     <a href="/">Home</a>
@@ -40,7 +55,7 @@
     </ul>
     <p>My skills are:</p>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
 
     {happy && <p>I am happy to be learning Astro!</p>}
