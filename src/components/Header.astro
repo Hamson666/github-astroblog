@@ -3,9 +3,19 @@ import Hamburger from './Hamburger.astro';
 import Navigation from './Navigation.astro';
 ---
 
-<header>
+<header class="full-bleed">
   <nav>
     <Hamburger />
     <Navigation />
   </nav>
-</header
+</header>
+
+<style>
+  header {
+    background-color: white;
+  }
+</style>
+
+<script>
+	import "../scripts/menu.js";
+</script>
